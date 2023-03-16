@@ -4,18 +4,27 @@ import utilStyles from "../styles/utils.module.css";
 import { getSortedPostsData } from "../lib/posts";
 import Link from "next/link";
 import Date from "../components/date";
+import { GetStaticProps } from "next";
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
-  // console.log("allPostsData (log from index.js): ", allPostsData);
+  console.log("allPostsData (index.tsx): ", allPostsData);
   return {
     props: {
       allPostsData,
     },
   };
-}
+};
 
-export default function Home({ allPostsData }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    date: string;
+    title: string;
+    id: string;
+  }[];
+}) {
   return (
     <Layout home>
       <Head>
@@ -63,37 +72,3 @@ export default function Home({ allPostsData }) {
     </Layout>
   );
 }
-
-// export default function Home({allPostsData}) {
-//   return (
-//     <Layout home>
-//       <Head>
-//         <title>{siteTitle}</title>
-//       </Head>
-//       <section className={utilStyles.headingMd}>
-//         <p>
-//           Welcome to my website! I'm a full stack developer based in Israel,
-//           specializing in Javascript, React and Next.js. I'm passionate about
-//           creating beautiful and functional websites and applications that solve
-//           real-world problems.
-//         </p>
-//         <p>
-//           When I'm not coding, you can find me exploring the great outdoors,
-//           hiking and taking in the scenery. I also love to cook and host dinners
-//           for friends and family, creating delicious meals and sharing great
-//           conversations. And when I'm in the mood for some downtime, I enjoy
-//           playing and listening to music, discovering new artists and genres.
-//         </p>
-//         <p>
-//           I believe that technology has the power to change lives, and I'm
-//           excited to be a part of that change. Let's connect and build something
-//           amazing together!
-//         </p>
-//         <p>
-//           (This is a sample website - you’ll be building a site like this on{" "}
-//           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-//         </p>
-//       </section>
-//     </Layout>
-//   );
-// }
