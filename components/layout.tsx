@@ -38,8 +38,8 @@ export default function Layout({
               priority
               src="/images/profile.jpg"
               className={utilStyles.borderCircle}
-              height={144}
-              width={144}
+              height={192}
+              width={192}
               alt="Meir J Cohen"
             />
             <h1 className={utilStyles.heading2Xl}>{name}</h1>
@@ -51,8 +51,8 @@ export default function Layout({
                 priority
                 src="/images/profile.jpg"
                 className={utilStyles.borderCircle}
-                height={108}
-                width={108}
+                height={144}
+                width={144}
                 alt=""
               />
             </Link>
