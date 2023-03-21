@@ -1,5 +1,5 @@
 ---
-title: "Bootstrap vs. Tailwind CSS: A Comprehensive Comparison for Next.js and WordPress-powered Affiliate Websites"
+title: "Bootstrap vs. Tailwind CSS: A Comprehensive Comparison"
 date: "2023-03-21"
 ---
 
